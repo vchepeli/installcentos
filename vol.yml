@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: vol
+  name: ${VOL_NAME}
 spec:
   capacity:
-    storage: 500Gi 
+    storage: 100Gi
   accessModes:
     - ReadWriteOnce     
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /mnt/data/vol
+    path: ${VOL_DIR}
